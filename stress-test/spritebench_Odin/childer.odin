@@ -88,7 +88,7 @@ THIS_CLASS_NAME_VTable: Classes.Node2D_vtable(THIS_CLASS_NAME) = {
         context = runtime.default_context();
         if self.class.position.y < size_half.y || self.position.y > (f32(self.window.y) - size_half.y) do self.angle = -self.class.angle
         if self.class.position.x < size_half.x || self.position.x > (f32(self.window.x) - size_half.x) do self.angle = Math.PI - self.class.angle
-        self.class.position += {Math.cos_f32(f32(self.class.angle))*f32(p_args.delta^)*f32(self.class.speed), Math.sin_f32(f32(self.class.angle))*f32(p_args.delta^)*f32(self.class.speed)}
+        self.class.position += {(Math.cos_f32(f32(self.class.angle))), (Math.sin_f32(f32(self.class.angle)))}*f32(p_args.delta^)*self.class.speed
         class.Node2D_set_position(self.self, &self.class.position)
     },
 }
